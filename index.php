@@ -8,7 +8,7 @@
      */
 
     /**
-     ** Funciones de salida
+     *TODO Funciones de salida
      */
 
     /**
@@ -34,7 +34,7 @@
     echo $mensaje;
 
     /**
-     ** Variables y constantes
+     *TODO Variables y constantes
      */
     
     /**
@@ -64,7 +64,7 @@
     define("ES_VALIDO", true);
 
     /**
-     ** Tipos de datos:
+     *TODO Tipos de datos:
      ** Integer (int): numeros enteros
      ** Float (float): numeros decimales
      ** String (string): cadenas de texto
@@ -90,5 +90,36 @@
     $array = [];
     var_dump($array);
 
+    /**
+     *TODO Números y operadores
+     */
     
+    /**
+     *TODO Operadores aritmeticos:
+     ** + = suma
+     ** - = resta
+     ** * = multiplicación
+     ** / = división
+     ** % = modulo
+     ** ** = potencia 
+     */
+
+    /**
+     *TODO Operadores de asignación:
+     ** = asignación
+     */
+
+    /**
+     *TODO Operadores de comparación:
+     ** == igualdad
+     ** === identico
+     ** != diferente
+     ** !== no identico
+     ** < menor que
+     ** > mayor que
+     ** <= menor o igual que
+     ** >= mayor o igual que
+     ** <=> nave espacial
+     ** <> diferente
+     */
 ?>
