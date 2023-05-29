@@ -32,5 +32,35 @@
     $texto = "Mundo";
     $mensaje = sprintf("Hola %s", $texto);
     echo $mensaje;
+
+    /**
+     ** Variables y constantes
+     */
+    
+    /**
+     ** Las variables se declaran con el simbolo $ seguido del nombre de la variable
+     ** Las variables pueden ser de tipo numerico, texto o booleano (true o false)
+     */
+
+    /**
+     ** var_dump: imprime el tipo de dato y contenido de una variable
+     */
+
+    $edad = 25;
+    $nombre = "Juan";
+    $es_valido = true;
+
+    echo var_dump($nombre);
+    
+    /**
+     ** Las constantes se declaran con la función define
+     ** El primer parametro es el nombre de la constante
+     ** El segundo parametro es el valor de la constante
+     ** El tercer parametro es opcional, si se coloca en true, la constante se declarará en mayusculas
+     */
+    
+    define("PI", 3.1416);
+    define("SALUDO", "Hola Mundo");
+    define("ES_VALIDO", true);
     
 ?>
