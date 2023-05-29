@@ -62,5 +62,33 @@
     define("PI", 3.1416);
     define("SALUDO", "Hola Mundo");
     define("ES_VALIDO", true);
+
+    /**
+     ** Tipos de datos:
+     ** Integer (int): numeros enteros
+     ** Float (float): numeros decimales
+     ** String (string): cadenas de texto
+     ** Boolean (bool): valores booleanos (true o false)
+     ** Array (array): arreglos, se utiliza para almacenar varios valores en una colección de datos
+     ** Object (object): objetos, se utiliza para almacenar instancias de clases
+     ** Resource (resource): recursos, se utiliza para almacenar referencias como conexiones a bases de datos
+     ** Null (null): valor nulo
+     */
+    
+    $logueado = true;
+    var_dump($logueado);
+
+    $numero = 200;
+    var_dump($numero);
+
+    $float = 200.15;
+    var_dump($float);
+
+    $nombre = "Juan";
+    var_dump($nombre);
+
+    $array = [];
+    var_dump($array);
+
     
 ?>
