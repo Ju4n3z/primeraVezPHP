@@ -122,4 +122,139 @@
      ** <=> nave espacial
      ** <> diferente
      */
+
+    /**
+     *TODO Operadores de incremento y decremento:
+     ** ++$a preincremento
+     ** $a++ postincremento
+     ** --$a predecremento
+     ** $a-- postdecremento
+     */
+
+    /**
+     *TODO Operadores lógicos:
+     ** && and
+     ** || or
+     ** ! not
+     ** xor
+     ** and, or, xor
+     */
+
+    /**
+     *TODO Operadores de arreglos:
+     ** + union
+     ** == igualdad
+     ** === identico
+     ** != diferente
+     ** !== no identico
+     ** <> diferente
+     */
+
+    /** 
+     *TODO Operadores bitwise:
+     ** & and
+     ** ^ xor
+     ** | not
+     ** << desplazamiento a la izquierda
+     ** >> desplazamiento a la derecha
+     */
+
+    /**
+     *TODO Operadores de error:
+     ** @ silenciar errores
+     */
+
+    /**
+     *TODO Operados de ejecución:
+     ** `` ejecutar comando
+     */
+
+    /**
+     *TODO Operadores de cadenas:
+     ** . concatenación
+     ** .= concatenación y asignación
+     */
+
+     $numero1 = 20;
+     $numero2 = 30;
+     $numero3 = 30;
+     $numero4 = '40';
+
+    var_dump($numero1 > $numero2);
+    echo "<br/>";
+
+    var_dump($numero1 < $numero2);
+    echo "<br/>";
+
+    var_dump($numero1 >= $numero2);
+    echo "<br/>";
+
+    var_dump($numero1 <= $numero2);
+    echo "<br/>";
+
+    var_dump($numero2 == $numero3);
+    echo "<br/>";
+
+    var_dump($numero2 == $numero4);
+    echo "<br/>";
+
+    var_dump($numero2 === $numero4);
+    echo "<br/>";
+
+    var_dump($numero1 <=> $numero2);
+    echo "<br/>";
+
+    var_dump($numero2 <=> $numero3);
+    echo "<br/>";
+
+    var_dump($numero2 <=> $numero1);
+    echo "<br/>";
+
+    $nombreCliente = "Campers Campuslands";
+
+    /**
+     ** strlen: retorna la longitud de una cadena de texto
+     */
+
+    echo strlen($nombreCliente);
+
+    /**
+     ** trim: elimina espacios en blanco al inicio y al final de una cadena de texto
+     */
+
+    $texto = trim($nombreCliente);
+    echo strlen($texto);
+
+    /**
+     ** strtoupper: convierte una cadena de texto a mayusculas
+     */
+
+    echo strtoupper($nombreCliente);
+
+    /**
+     ** strtolower: convierte una cadena de texto a minusculas
+     */
+
+    echo strtolower($nombreCliente);
+
+    $mail1 = "correo@correo.com";
+    $mail2 = "correo@correo.com";
+
+    var_dump(strtolower($mail1) === strtolower($mail2));
+    echo str_replace('Juan', 'J', $nombreCliente);
+
+    /**
+     ** strpos: retorna la posición de la primera ocurrencia de una cadena de texto
+     */
+
+    echo strpos($nombreCliente, 'Pedro');
+
+    $tipoCliente = "Premium - Empresarial";
+
+    echo "<br>";
+
+    echo "El cliente " . $nombreCliente . " es " . $tipoCliente;
+
+    echo "El cliente $nombreCliente es $tipoCliente";
+
 ?>
