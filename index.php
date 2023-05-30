@@ -257,4 +257,148 @@
 
     echo "El cliente $nombreCliente es $tipoCliente";
 
+
+    /**
+     *TODO Arreglos, Arreglos asociativos y funciones para arreglos
+     */
+
+    /**
+     ** Arreglos: se utilizan para almacenar varios valores en una colección de datos
+     */
+
+    $miArreglo = array('valor1', 'valor2', 'valor3');
+
+    $carrito = ['Tablet', 'Television', 'Computadora'];
+
+    /**
+     ** Util para imprimir el contenido de un arreglo
+     */
+
+    echo "<pre>";
+    var_dump($carrito);
+    echo "</pre>";
+
+    /**
+     ** Acceder a un elemento de un arreglo
+     */
+
+    echo $carrito[1];
+
+    /**
+     ** Agregar un elemento a un arreglo en una posición especifica
+     */
+
+    $carrito[3] = 'Nuevo producto...';
+
+    /**
+     ** Agregar un elemento a un arreglo en la ultima posición
+     */
+
+    array_push($carrito, 'Audifonos');
+
+    /**
+     ** Agregar un elemento a un arreglo en la primera posición
+     */
+
+    array_unshift($carrito, 'Smartwatch');
+
+    $clientes = array('cliente1', 'cliente2', 'cliente3');
+    echo "<pre>";
+    var_dump($clientes);
+    echo "</pre>";
+
+    echo $clientes[1];
+
+    /**
+     ** Arreglos asociativos: se utilizan para almacenar varios valores en una colección de datos, pero en este caso se accede a los valores a través de una clave
+     */
+
+     $miArrayAsociativo = array('clave1' => 'valor1', 'clave2' => 'valor2', 'clave3' => 'valor3');
+
+     /**
+      ** Para acceder a un elemento de un arreglo asociativo se utiliza la clave
+      */
+
+    echo $miArrayAsociativo['clave1'];
+    echo $miArrayAsociativo['clave2'];
+    echo $miArrayAsociativo['clave3'];
+
+    /**
+     ** foreach: se utiliza para recorrer un arreglo
+     */
+
+    foreach ($miArrayAsociativo as $clave => $valor) {
+        echo "Clave:" . $clave . "Valor: " $valor;
+    }
+
+    $cliente = [
+        'nombre' => 'Juan',
+        'saldo' => 200,
+        'informacion' => [
+            'tipo' => 'Premium',
+            'disponible' => 100
+        ]
+    ];
+
+    echo "<pre>";
+    var_dump($cliente['informacion']);
+    echo "</pre>";
+
+    // echo $cliente['nombre'];
+    // echo $cliente['informacion']['disponible'];
+
+    $cliente['codigo'] = 1209192012;
+
+    echo "<pre>";
+    var_dump($cliente);
+    echo "</pre>";
+
+    $carrito = ['Tablet', 'Television', 'Computadora'];
+
+    /**
+     ** in_array: se utiliza para verificar si un elemento existe en un arreglo
+     */
+
+    var_dump(in_array('Tablet', $carrito));
+    var_dump(in_array('Audifonos', $carrito));
+
+    /**
+     ** sort: se utiliza para ordenar un arreglo de forma ascendente
+     ** rsort: se utiliza para ordenar un arreglo de forma descendente 
+     */
+
+    $numeros = array(1,3, 4, 5, 1, 2);
+    sort($numeros);
+    rsort($numeros);
+
+    echo "<pre>";
+    var_dump($numeros);
+    echo "</pre>";
+
+    $cliente = array(
+        'saldo' => 200,
+        'tipo' => 'Premium',
+        'nombre' => 'Juan'
+    );
+
+    echo "<pre>";
+    var_dump($cliente);
+    echo "</pre>";
+
+    /**
+     ** asort: se utiliza para ordenar un arreglo asociativo de forma ascendente por valor, orden alfabetico
+     ** arsort: se utiliza para ordenar un arreglo asociativo de forma descendente por valor, z de primero
+     ** ksort: se utiliza para ordenar un arreglo asociativo de forma ascendente por clave, orden alfabetico
+     ** krsort: se utiliza para ordenar un arreglo asociativo de forma descendente por clave, z de primero
+     */
+
+    asort($cliente);
+    arsort($cliente);
+    ksort($cliente);
+    krsort($cliente);
+
+    echo "<pre>";
+    var_dump($cliente);
+    echo "</pre>";
+    
 ?>
