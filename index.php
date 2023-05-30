@@ -328,7 +328,7 @@
      */
 
     foreach ($miArrayAsociativo as $clave => $valor) {
-        echo "Clave:" . $clave . "Valor: " $valor;
+        echo "Clave: " . $clave . ", Valor: " . $valor;
     }
 
     $cliente = [
@@ -400,5 +400,62 @@
     echo "<pre>";
     var_dump($cliente);
     echo "</pre>";
+
+    /**
+     *TODO Isset() y Empty()
+     */
+
+    /**
+     ** isset: se utiliza para verificar si una variable está definida y tiene un valor
+     ** isset también se utiliza para verificar si un arreglo está definido y tiene un valor
+     ** isset también permite revisar si una propiedad de un arreglo asociativo está definida y tiene un valor
+     */
+
+    $miVariable = 'Hola';
+
+    if (isset($miVariable)) {
+        echo 'La variable está definida y tiene un valor';
+    } else {
+        echo 'La variable no está definida o no tiene un valor'; 
+    }
+
+    /**
+     ** empty: se utiliza para verificar si una variable está vacia, también se utiliza para verificar si un arreglo está vacio
+     */
+
+    $miVariable = "";
+
+    if(empty($miVariable)) {
+        echo 'La variable está vacia o no está definida';
+    } else {
+        echo 'La variable tiene un valor';
+    }
+
+    $clientes = [];
+    $clientes2 = array();
+    $clientes3 = array('Pedro', 'Juan', 'Karen');
+    $cliente = [
+        'nombre' => 'Juan',
+        'saldo' => 200
+    ];
+
+    var_dump(empty($clientes));
+    var_dump(empty($clientes3));
+    var_dump(empty($clientes2));
+
+    echo "<br>";
+    var_dump(isset($clientes4));
+    var_dump(isset($clientes));
+    var_dump(isset($clientes2));
+    var_dump(isset($clientes3));
+
+    var_dump(isset($cliente['nombre']));
+    var_dump(isset($cliente['codigo']));
+
+    /**
+     ** in_array: se utiliza para verificar si una variable es un arreglo
+     */
+
+    var_dump(in_array('Audifonos', $carrito));
     
 ?>
