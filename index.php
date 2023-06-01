@@ -344,8 +344,12 @@
     var_dump($cliente['informacion']);
     echo "</pre>";
 
-    // echo $cliente['nombre'];
-    // echo $cliente['informacion']['disponible'];
+    echo $cliente['nombre'];
+    echo $cliente['informacion']['disponible'];
+
+    /**
+     ** Para agregar un elemento a un arreglo asociativo se crea la clave y se asigna el valor
+     */
 
     $cliente['codigo'] = 1209192012;
 
@@ -400,6 +404,270 @@
     echo "<pre>";
     var_dump($cliente);
     echo "</pre>";
+
+    /**
+     ** Arreglos multidimensionales: se utilizan para almacenar varios valores en una colección de datos, pero en este caso se accede a los valores a través de una clave
+     */
+
+    $clientes = array(
+        'Juan' => array('saldo' => 200, 'tipo' => 'Premium'),
+        'Karen' => array('saldo' => 1000, 'tipo' => 'Premium'),
+        'Antonio' => array('saldo' => 500, 'tipo' => 'Normal')
+    );
+
+    /**
+     ** Para acceder a un elemento de un arreglo multidimensional se utiliza la clave  
+     */
+
+    echo $clientes['Juan']['saldo'];
+
+    /**
+     *TODO Metodos para arreglos
+     */
+
+    /**
+     ** Array_flip: se utiliza para intercambiar las claves de un arreglo por sus valores
+    */
+    
+    $miArreglo = array('clave1' => 'valor1', 'clave2' => 'valor2', 'clave3' => 'valor3');
+
+    $miArreglo = array_flip($miArreglo);
+
+    echo "<pre>";
+    var_dump($miArreglo);
+    echo "</pre>";
+
+    /**
+     ** array_fill: se utiliza para llenar un arreglo con valores en un rango especifico
+     */
+
+    $miArreglo = array_fill(0, 10, 'valor');
+
+    echo "<pre>";
+    var_dump($miArreglo);
+    echo "</pre>";
+
+    /**
+     ** array_filter: se utiliza para filtrar los elementos de un arreglo
+     */
+
+    $miArreglo = array(1,2,3,4,5,6,7,8,9,10);
+
+    $miArreglo = array_filter($miArreglo, function($elemento) {
+        return $elemento > 5;
+    });
+
+    echo "<pre>";
+    var_dump($miArreglo);
+    echo "</pre>";
+
+    /**
+     ** array_map: se utiliza para modificar los elementos de un arreglo
+     */
+
+    $miArreglo = array(1,2,3,4,5,6,7,8,9,10);
+
+    $miArreglo = array_map(function($elemento) {
+        return $elemento * 2;
+    }, $miArreglo);
+
+    echo "<pre>";
+    var_dump($miArreglo);
+    echo "</pre>";
+
+    /**
+     ** array_reduce: se utiliza para reducir los elementos de un arreglo a un solo valor
+     */
+
+    $miArreglo = array(1,2,3,4,5,6,7,8,9,10);
+
+    $miArreglo = array_reduce($miArreglo, function($elemento, $valor) {
+        return $elemento + $valor;
+    });
+
+    echo "<pre>";
+    var_dump($miArreglo);
+    echo "</pre>";
+
+    /**
+     ** array_key_exists: se utiliza para verificar si una clave existe en un arreglo
+     */
+
+    $miArreglo = array('clave1' => 'valor1', 'clave2' => 'valor2', 'clave3' => 'valor3');
+
+    if(array_key_exists('clave1', $miArreglo)) {
+        echo 'La clave existe';
+    } else {
+        echo 'La clave no existe';
+    }
+
+    /**
+     ** in_array: se utiliza para verificar si un valor existe en un arreglo
+     */
+
+    $miArreglo = array('clave1' => 'valor1', 'clave2' => 'valor2', 'clave3' => 'valor3');
+
+    if(in_array('valor1', $miArreglo)) {
+        echo 'El valor existe';
+    } else {
+        echo 'El valor no existe';
+    }
+
+    /**
+     ** array_rand: se utiliza para obtener una o varias claves aleatorias de un arreglo
+     */
+
+    $miArreglo = array('clave1' => 'valor1', 'clave2' => 'valor2', 'clave3' => 'valor3');
+
+    $miArreglo = array_rand($miArreglo, 2);
+
+    /**
+     ** array_unique: se utiliza para eliminar los valores duplicados de un arreglo
+     */
+
+    $miArreglo = array(1,2,3,4,5,6,7,8,9,10,1,2,3,4);
+
+    $miArreglo = array_unique($miArreglo);
+
+    echo "<pre>";
+    var_dump($miArreglo);
+    echo "</pre>";
+
+    /**
+     ** array_intersect: se utiliza para obtener los valores que existen en dos o más arreglos
+     */
+
+    $miArreglo1 = array(1,2,3,4,5,6,7,8,9,10);
+
+    $miArreglo2 = array(5,6,7,8,9,10,11,12,13,14);
+
+    $miArreglo = array_intersect($miArreglo1, $miArreglo2);
+
+    echo "<pre>";
+    var_dump($miArreglo);
+    echo "</pre>";
+
+    /**
+     ** array_diff: se utiliza para obtener los valores que no existen en dos o más arreglos
+     */
+
+    $miArreglo1 = array(1,2,3,4,5,6,7,8,9,10);
+
+    $miArreglo2 = array(5,6,7,8,9,10,11,12,13,14);
+
+    $miArreglo = array_diff($miArreglo1, $miArreglo2);
+
+    echo "<pre>";
+    var_dump($miArreglo);
+    echo "</pre>";
+
+    /**
+     ** array_push: se utiliza para agregar uno o más elementos al final de un arreglo
+     */
+
+    $miArreglo = array(1,2,3,4,5,6,7,8,9,10);
+
+    array_push($miArreglo, 11, 12, 13, 14, 15);
+
+    echo "<pre>";
+    var_dump($miArreglo);
+    echo "</pre>";
+
+    /**
+     ** array_pop: se utiliza para eliminar el último elemento de un arreglo
+     */
+
+    $miArreglo = array(1,2,3,4,5,6,7,8,9,10);
+
+    array_pop($miArreglo);
+
+    echo "<pre>";
+    var_dump($miArreglo);
+    echo "</pre>";
+
+    /**
+     ** array_reverse: se utiliza para invertir el orden de los elementos de un arreglo
+     */
+
+    $miArreglo = array(1,2,3,4,5,6,7,8,9,10);
+
+    $miArreglo = array_reverse($miArreglo);
+
+    echo "<pre>";
+    var_dump($miArreglo);
+    echo "</pre>";
+
+    /**
+     ** array_sum: se utiliza para obtener la suma de los elementos de un arreglo
+     */
+
+    $miArreglo = array(1,2,3,4,5,6,7,8,9,10);
+
+    $miArreglo = array_sum($miArreglo);
+
+    echo "<pre>";
+    var_dump($miArreglo);
+    echo "</pre>";
+
+    /**
+     ** array_product: se utiliza para obtener el producto de los elementos de un arreglo
+     */
+
+    $miArreglo = array(1,2,3,4,5,6,7,8,9,10);
+
+    $miArreglo = array_product($miArreglo);
+
+    echo "<pre>";
+    var_dump($miArreglo);
+    echo "</pre>";
+
+    /**
+     ** array_chunk: se utiliza para dividir un arreglo en arreglos más pequeños
+     */
+
+    $miArreglo = array(1,2,3,4,5,6,7,8,9,10);
+
+    $miArreglo = array_chunk($miArreglo, 2);
+
+    echo "<pre>";
+    var_dump($miArreglo);
+    echo "</pre>";
+
+    /**
+     ** array_keys: se utiliza para obtener las claves de un arreglo
+     */
+
+    $miArreglo = array('clave1' => 'valor1', 'clave2' => 'valor2', 'clave3' => 'valor3');
+
+    $miArreglo = array_keys($miArreglo);
+
+    echo "<pre>";
+    var_dump($miArreglo);
+    echo "</pre>";
+
+    /**
+     ** array_values: se utiliza para obtener los valores de un arreglo
+     */
+
+    $miArreglo = array('clave1' => 'valor1', 'clave2' => 'valor2', 'clave3' => 'valor3');
+
+    $miArreglo = array_values($miArreglo);
+
+    echo "<pre>";
+    var_dump($miArreglo);
+    echo "</pre>";
+
+    /**
+     ** array_walk: se utiliza para recorrer un arreglo y aplicar una función a cada uno de sus elementos
+     */
+
+    $miArreglo = array(1,2,3,4,5,6,7,8,9,10);
+
+    function cuadrado($valor) {
+        echo $valor * $valor . "<br>";
+    }
+
+    array_walk($miArreglo, 'cuadrado');
 
     /**
      *TODO Isset() y Empty()
