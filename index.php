@@ -1,6 +1,10 @@
 <?php
 
     /**
+     *! PHP básico
+     */
+
+    /**
      ** Acá se incluye el código PHP que se desea ejecutar
      ** El código PHP se ejecuta en el servidor
      ** La estructura de las carpetas es la siguiente: carpeta css, carpeta imagenes, carpeta js, carpeta scripts, carpeta uploads, archivo index.php
@@ -726,4 +730,506 @@
 
     var_dump(in_array('Audifonos', $carrito));
     
+    /**
+     *TODO Estrucutras de control
+     */
+
+    /**
+     ** Las estructuras de control nos permiten controlar el flujo de ejecución de nuestro código
+     ** Las estructuras de control más comunes son: estructuras de control condicionales, estructuras de control de repetición y estructuras de control de excepciones
+     */
+
+    /**
+     *TODO Estructuras de control condicionales
+     */
+
+    /**
+     ** if: se utiliza para ejecutar una o más instrucciones si se cumple una condición
+     */
+
+    if (10 > 3) {
+        echo '10 es mayor que 3';
+    }
+
+    if (10 > 3) {
+        echo '10 es mayor que 3';
+    } else {
+        echo '10 no es mayor que 3';
+    }
+
+    if (10 > 3) {
+        echo '10 es mayor que 3';
+    } elseif (10 < 20) {
+        echo '10 es menor que 20';
+    } else {
+        echo '10 no es mayor que 3 y 10 no es menor que 20';
+    }
+
+    /**
+     ** switch: se utiliza para ejecutar una o más instrucciones si se cumple una condición, dependiendo del valor de una variable. Despues de cada case se debe colocar la palabra reservada break
+     */
+
+    $autenticado = true;
+    $admin = false;
+
+    if ($autenticado && $admin) {
+        echo 'Usuario autenticado correctamente';
+    } else {
+        echo 'Usuario no autenticado, inicia sesión';
+    }
+
+    $cliente = [
+        'nombre' => 'Juan',
+        'saldo' => 0,
+        'informacion' => [
+            'tipo' => 'Regular'
+        ]
+    ];
+
+    echo "<br>";
+
+    if (!empty($cliente)) {
+        echo 'El arreglo de cliente no está vacio';
+
+        if ($cliente['saldo'] > 0) {
+            echo 'El cliente tiene saldo disponible';
+        } else {
+            echo 'No hay saldo';
+        }
+    }
+
+    echo "<br>";
+
+    if($cliente['saldo'] > 0) {
+        echo 'El cliente tiene saldo';
+    } else if ($cliente['informacion']['tipo'] === 'Premium') {
+        echo 'El cliente es premium';
+    } else {
+        echo 'No hay cliente definido o no tiene saldo o no es premium';
+    }
+
+    echo "<br>";
+
+    $tecnologia = 'HTML';
+
+    switch ($tecnologia) {
+        case 'PHP':
+            echo 'PHP, un excelente lenguaje';
+            break;
+        case 'JavaScript':
+            echo 'Genial, el lenguaje de la web';
+            break;
+        case 'HTML':
+            echo 'Emmm...';
+            break;
+        default:
+            echo 'Algo lenguaje que no se cual es';
+            break;
+    }
+
+    /**
+     *TODO Estructuras de control de repetición
+     */
+
+    /**
+     ** while: se utiliza para ejecutar una o más instrucciones mientras se cumpla una condición
+     ** do while: se utiliza para ejecutar una o más instrucciones mientras se cumpla una condición, la diferencia con el while es que el do while se ejecuta al menos una vez
+     ** for: se utiliza para ejecutar una o más instrucciones un número específico de veces
+     */
+
+    $i = 0;
+
+    while ($i < 10) {
+        echo $i . '<br>';
+        $i++;
+    }
+
+    echo "<br>";
+
+    $i = 0;
+
+    do {
+        echo $i . '<br>';
+        $i++;
+    } while ($i < 10);
+
+    echo "<br>";
+
+    for ($i = 0; $i < 10; $i++) {
+        echo $i . '<br>';
+    }
+
+    echo "<br>";
+
+    $clientes = ['Pedro', 'Juan', 'Karen'];
+
+    foreach ($clientes as $cliente):
+        echo $cliente . '<br>';
+    endforeach;
+
+    $cliente = [
+        'nombre' => 'Juan',
+        'saldo' => 200,
+        'tipo' => 'Premium'
+    ];
+
+    foreach ($cliente as $key => $valor):
+        echo $key . ' - ' . $valor . '<br>';
+    endforeach;
+
+    $productos = [
+        [
+            'nombre' => 'Tablet',
+            'precio' => 200,
+            'disponible' => true
+        ],
+        [
+            'nombre' => 'Television',
+            'precio' => 300,
+            'disponible' => true
+        ],
+        [
+            'nombre' => 'Monitor',
+            'precio' => 400,
+            'disponible' => false
+        ]
+    ];
+
+    foreach ($productos as $producto) { ?>
+        <li>
+            <p>Producto: <?php echo $producto['nombre']; ?></p>
+            <p>Precio: <?php echo $producto['precio']; ?></p>
+            <p><?php echo ($producto['disponible']) ? 'Disponible' : 'No disponible'; ?></p>
+        </li>
+    <?php
+    }
+
+    /**
+     *TODO Estructuras de control de excepciones
+     */
+
+    /**
+     ** try catch: se utiliza para capturar errores en tiempo de ejecución. El código que puede generar un error se coloca dentro del bloque try, y el código que se ejecuta en caso de que se genere un error se coloca dentro del bloque catch
+     */
+
+    try {
+        // Código que puede generar un error
+    } catch (Exception $e) {
+        // Código que se ejecuta en caso de error
+    }
+
+    try {
+        if (isset($cliente)) {
+            echo 'El cliente existe';
+        } else {
+            throw new Exception('El cliente no existe');
+        }
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+
+    /**
+     *TODO Funciones definidas por el usuario
+     */
+
+    /**
+     ** Las funciones definidas por el usuario nos permiten reutilizar código. Las funciones se definen con la palabra reservada function, seguida del nombre de la función y paréntesis. Dentro de los paréntesis se colocan los parámetros de la función, separados por comas. Después de los paréntesis se coloca el bloque de código de la función, el cual puede contener uno o más instrucciones. Para ejecutar una función, se coloca el nombre de la función seguido de paréntesis, y dentro de los paréntesis se colocan los argumentos de la función, separados por comas. Son una herramienta muy poderosa para reutilizar código y hacerlo más mantenible.
+     */
+
+    /**
+     *TODO Funciones en PHP
+     */
+
+    function saludar() {
+        echo 'Hola';
+    }
+
+    saludar();
+    
+    /**
+     *TODO Funciones que no retornan valor
+     */
+
+    /**
+     ** Las funciones que no retornan valor se utilizan para ejecutar una o más instrucciones, pero no retornan un valor. Para definir una función que no retorne valor, se coloca la palabra reservada void después del paréntesis de la función
+     */
+
+    //declare(strict_types=1);
+
+    function sumar(int $numero1 = 0, array $numero2): void {
+        echo $numero1 + $numero2;
+    }
+    sumar(10, []);
+
+    function sumar(int $numero1 = 0, array $numero2) {
+        echo $numero1 + $numero2;
+    }
+    sumar(10, []);
+
+    /**
+     *TODO Funciones que retornan valor
+     */
+
+    /**
+     ** Las funciones que retornan valor se utilizan para ejecutar una o más instrucciones y retornar un valor. Para definir una función que retorne valor, se coloca el tipo de dato que retorna la función después del paréntesis de la función
+     */
+
+    //declare(strict_types=1);
+    //include 'includes/header.php';
+    function usuarioAutenticado(bool $autenticado): ?string {
+        if ($autenticado) {
+            return 'El usuario está autenticado';
+        } else {
+            return null;
+        }
+    }
+
+    $usuario = usuarioAutenticado(false);
+    echo $usuario;
+    //include 'includes/footer.php';
+
+    /**
+     *TODO include, require, include_once, require_once
+     */
+
+    /**
+     ** include: incluye y ejecuta el archivo especificado
+     ** require: incluye y ejecuta el archivo especificado, si el archivo no existe o tiene un error, se detiene la ejecución del programa
+     ** include_once: incluye y ejecuta el archivo especificado, si el archivo ya ha sido incluido, no lo incluye nuevamente
+     ** require_once: incluye y ejecuta el archivo especificado, si el archivo ya ha sido incluido, no lo incluye nuevamente, si el archivo no existe o tiene un error, se detiene la ejecución del programa
+     */
+
+    echo <<<HTML
+    <header>
+        <?php include(includes/header.php') ?>
+    </header>
+    HTML;
+
+    /**
+     *TODO Json_encode y json_decode
+     */
+
+    /**
+     ** json_encode: convierte un array de PHP a formato JSON
+     */
+
+    $productos = [
+        [
+            'nombre' => 'Tablet',
+            'precio' => 200,
+            'disponible' => true
+        ],
+        [
+            'nombre' => 'Television',
+            'precio' => 300,
+            'disponible' => true
+        ],
+        [
+            'nombre' => 'Monitor',
+            'precio' => 400,
+            'disponible' => false
+        ]
+    ];
+
+    var_dump($productos);
+    $json = json_encode($productos, JSON_UNESCAPED_UNICODE);
+    var_dump($json);
+
+    /**
+     ** json_decode: convierte un string en formato JSON a un array de PHP
+     */
+
+    $json = '[{"nombre":"Tablet","precio":200,"disponible":true},{"nombre":"Television","precio":300,"disponible":true},{"nombre":"Monitor","precio":400,"disponible":false}]';
+
+    var_dump($json);
+
+    $productos = json_decode($json);
+
+    var_dump($productos);
+
+    /**
+     *! PHP intermedio
+     */
+
+    /**
+     *TODO Programación orientada a objetos
+     */
+
+    /**
+     ** La programación orientada a objetos es un paradigma de programación que se basa en la definición de clases y objetos. Una clase es una plantilla que define las propiedades y métodos comunes a un grupo de objetos. Un objeto es una instancia de una clase. Las propiedades son las características que definen a un objeto. Los métodos son las acciones que puede realizar un objeto.
+     */
+
+    /**
+     ** Clase: una clase es una plantilla que define las propiedades y métodos comunes a un grupo de objetos
+     ** Objeto: un objeto es una instancia de una clase. Represente un individuo o una entidad de la clase
+     ** Atributo: un atributo es una propiedad de un objeto
+     ** Método: un método es una acción que puede realizar un objeto
+     ** Encapsulamiento: es el principio que establece que los atributos y metodos de una clase deben estar definidos con un nivel de acceso, estos pueden ser public, protected o private
+     ** Herencia: es el principio que establece que una clase puede heredar los atributos y métodos de otra clase. La clase que hereda se conoce como clase hija o subclase, y la clase de la cual hereda se conoce como clase padre o superclase
+     ** Polimorfismo: es el principio que establece que una clase puede tener varios métodos con el mismo nombre, pero con diferente comportamiento
+     */
+
+    /**
+     *TODO Modificadores de acceso
+     */
+
+    /**
+     ** Los modificadores de acceso nos permiten establecer el nivel de acceso de los atributos y métodos de una clase. Los modificadores de acceso son public, protected y private
+     */
+
+     /**
+      ** public: los atributos y métodos definidos como public pueden ser accedidos desde cualquier lugar
+      ** protected: los atributos y métodos definidos como protected solo pueden ser accedidos desde la clase que los define y desde las clases heredadas. No pueden ser accedidos desde fuera de la clase
+      ** private: los atributos y métodos definidos como private solo pueden ser accedidos desde la clase que los define. No pueden ser accedidos desde las clases heredadas ni desde fuera de la clase
+      */
+
+    /**
+     *TODO clases
+     */
+
+    class Persona {
+
+        public function __construct(private string $nombre, protected int $edad) {
+            $this->nombre = $nombre;
+            $this->edad = $edad;
+        }
+
+        public function getNombre() {
+            return $this->nombre;
+        }
+
+        public function getEdad() {
+            return $this->edad;
+        }
+
+        public function setNombre($nombre) {
+            $this->nombre = $nombre;
+        }
+
+        public function setEdad($edad) {
+            $this->edad = $edad;
+        }
+
+        private function saludar() {
+            echo 'Hola, mi nombre es ' . $this->nombre;
+        }
+    }
+
+    $alumno = new Persona('Juan', 20);
+
+    echo $alumno->getNombre();
+    echo $alumno->getEdad();
+
+    echo "<br>";
+
+    /**
+     *TODO Métodos estáticos
+     */
+
+    /**
+     ** Los métodos estáticos son aquellos que pueden ser accedidos sin necesidad de instanciar la clase. Para definir un método estático se utiliza la palabra reservada static
+     ** No requieren una instancia de la clase para ser accedidos
+     ** Se acceden utilizando el operador de resolución de ámbito (::)
+     ** No pueden acceder a los atributos de la clase utilizando $this
+     ** No puede acceder a propiedades de instancia
+     */
+
+    class Persona {
+        private string $nombre;
+        protected int $edad;
+        private static $nombreAux;
+
+        public function __construct($nombre, $edad) {
+            $this->nombre = $nombre;
+            $this->edad = $edad;
+            self::$nombreAux = $nombre;
+        }
+
+        public function getNombre() {
+            return $this->nombre;
+        }
+
+        public function getEdad() {
+            return $this->edad;
+        }
+
+        public function setNombre($nombre) {
+            $this->nombre = $nombre;
+        }
+
+        public function setEdad($edad) {
+            $this->edad = $edad;
+        }
+
+        public static function saludar() {
+            echo 'Hola como estas ' . self::$nombreAux;
+        }
+    }
+
+    echo Persona::saludar();
+
+    /**
+     *TODO Herencia
+     */
+
+     /**
+      ** La herencia es el principio que establece que una clase puede heredar los atributos y métodos de otra clase. La clase que hereda se conoce como clase hija o subclase, y la clase de la cual hereda se conoce como clase padre o superclase
+      */
+
+    /**
+     ** Clase padre o superclase: es la clase de la cual hereda otra clase. Define los atributos y métodos comunes a un grupo de clases
+     ** Clase hija o subclase: es la clase que hereda de otra clase. Hereda los atributos y métodos de la clase padre, y puede definir sus propios atributos y métodos
+     ** Herencia simple: es cuando una clase hereda de una sola clase
+     ** Herencia múltiple: es cuando una clase hereda de dos o más clases
+     ** Polimorfismo: es la capacidad de un objeto de una clase derivada de comportarse como un objeto de otra clase. Se puede lograr mediante la herencia y la sobrecarga de métodos. La sobrecarga de métodos es cuando una clase hija redefine un método de la clase padre
+     */
+
+    class Transporte {
+        public function __construct(protected int $ruedas, protected int $capacidad) {
+           
+        }
+
+        public function getInfo() {
+            return "El transporte tiene " . $this->ruedas . " ruedas y una capacidad de " . $this->capacidad . " personas";
+        }
+
+        public function getRuedas() {
+            return $this->ruedas;
+        }
+    }
+
+    class Bicicleta extends Transporte {
+        public function __construct(protected int $ruedas, protected int $capacidad) {
+            parent::__construct($ruedas, $capacidad);
+        }
+
+        public function getInfo() {
+            return "La bicicleta tiene " . $this->ruedas . " ruedas y una capacidad de " . $this->capacidad . " personas";
+        }
+    }
+
+    class Automovil extends Transporte {
+        public function __construct(protected int $ruedas, protected int $capacidad, protected string $transmision) {
+            parent::__construct($ruedas, $capacidad);
+        }
+
+        public function getInfo() {
+            return "El automovil tiene " . $this->ruedas . " ruedas y una capacidad de " . $this->capacidad . " personas";
+        }
+
+        public function getTransmision() {
+            return $this->transmision;
+        }
+    }
+
+    $bicicleta = new Bicicleta(2, 1);
+
+    echo $bicicleta->getInfo();
+    echo $bicicleta->getRuedas();
+
+    echo "<br>";
+
+    $automovil = new Automovil(4, 5, 'manual');
+    echo $automovil->getInfo();
+    echo $automovil->getTransmision();
 ?>
