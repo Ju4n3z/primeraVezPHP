@@ -1491,4 +1491,115 @@
      *! PHP avanzado
      */
 
+    /**
+     *TODO Integración de PHP con MySQL
+     */
+
+     /**
+      ** La integración de bases de datos con PHP es una de las características más importantes de PHP. PHP nos permite conectarnos a una base de datos MySQL, y ejecutar consultas SQL. Para conectarnos a una base de datos MySQL utilizamos la función mysqli_connect, y para ejecutar consultas SQL utilizamos la función mysqli_query
+      */
+
+    /**
+     *TODO Bases de datos relacionales
+     */
+
+    /**
+     ** Las bases de datos relacionales son aquellas que almacenan los datos en tablas, y que establecen relaciones entre las tablas. Las bases de datos relacionales son las más utilizadas en la actualidad, y son las más utilizadas en el desarrollo de aplicaciones web. Las bases de datos relacionales son muy eficientes para almacenar grandes cantidades de datos, y son muy eficientes para realizar consultas a los datos almacenados
+     ** Sistema de gestión de bases de datos relacionales (SGBD): es un sistema que permite almacenar y gestionar datos en una base de datos relacional. Los sistemas de gestión de bases de datos relacionales más utilizados son MySQL, PostgreSQL, Oracle, SQL Server y SQLite
+     ** En una base de datos relacional, los datos se almacenan en tablas, y las tablas se relacionan entre sí mediante llaves primarias y llaves foráneas. Cada fila corresponde a una instancia de la entidad que representa la tabla, y cada columna corresponde a un atributo de la entidad que representa la tabla
+     ** Llave primaria: es un atributo o conjunto de atributos que identifica de forma única a cada fila de una tabla. La llave primaria no puede tener valores nulos, y no puede repetirse en ninguna otra fila de la tabla
+     ** Llave foránea: es un atributo o conjunto de atributos que establece una relación entre dos tablas. La llave foránea debe tener el mismo tipo de dato que la llave primaria a la que hace referencia, y debe tener el mismo nombre que la llave primaria a la que hace referencia
+     ** Las bases de datos relacionales se basan en el modelo relacional, que fue propuesto por Edgar Frank Codd en 1970, y en el lenguaje de consulta estructurado (SQL).
+     */
+
+    /**
+     ** Un sistema de gestión de bases de datos relacionales (RDBMS) es un sistema que permite almacenar y gestionar datos en una base de datos relacional. Los sistemas de gestión de bases de datos relacionales más utilizados son MySQL, PostgreSQL, Oracle, SQL Server y SQLite.
+     ** El usuario suele elegir un nombre relacionado con los datos que se almacenarán en la tabla; por ejemplo, STUDENTS, CUSTOMERS, etc
+     ** Ventajas de RSBMS:
+     ** Menos redundancia de datos
+     ** Menos inconsistencia de datos
+     ** Mejor integridad de datos
+     ** Mejor seguridad de datos
+     ** Mejor rendimiento de datos 
+     */
+
+    /**
+     ** Reglas para tablas de bases de datos relacionales:
+     ** Cada tabla debe tener un nombre único
+     ** Cada tabla debe tener una columna o conjunto de columnas que identifiquen de forma única cada fila de la tabla
+     ** Cada columna debe tener un nombre único
+     ** Las entradas de una columna deben ser del mismo tipo de dato
+     ** Cada fila debe ser única
+     ** El orden de las filas y las columnas no es importante
+     ** Cada tabla puede contener varias filas
+     */
+
+    /**
+     *TODO Entidades y atributos
+     */
+
+    /**
+     ** Entidad: es un objeto o concepto del mundo real que se puede distinguir de otros objetos. Por ejemplo, una persona, un producto, una venta, etc
+     ** Tipos de entidades: principal (Existe de forma independiente), caracteristicas(Existe gracias a otra entidad) y de intersección(Existe gracias a dos o más entidades)
+     ** Las entidades contienen instancias, una instancia de entidad es una única incidencia de una entidad. Por ejemplo, una persona, un producto, una venta, etc. Lan entidades representan un juegos de instancias que son de interés para el usuario
+     */
+
+    /**
+     *TODO Identificadores únicos
+     */
+
+    /**
+     ** Identificador único: es un atributo o conjunto de atributos que identifica de forma única a cada fila de una tabla. La llave primaria no puede tener valores nulos, y no puede repetirse en ninguna otra fila de la tabla
+     */
+
+    /**
+     ** Caracterisis de identificadores únicos:
+     ** No puede tener valores nulos
+     ** No puede repetirse en ninguna otra fila de la tabla
+     ** Deben ser estables y no cambiar con el tiempo
+     ** Deben ser indexados
+     ** Pueden utilizarse como referencia en otras tablas
+     */
+
+    /**
+     *TODO Relaciones entre tablas
+     */
+
+    /**
+     ** Relación: es una asociación entre dos o más entidades. Las relaciones se representan mediante llaves foráneas. Las relaciones se clasifican en uno a uno, uno a muchos y muchos a muchos
+     ** Una relación representa las reglas de negocio que enlazan dos o más entidades. Cada relación siempre tiene dos reglas de noegocio.
+     */
+    
+    /**
+     *TODO Clave ajena o foránea
+     */
+
+    /**
+     ** Clave ajena o foránea: es un atributo o conjunto de atributos que establece una relación entre dos tablas. La llave foránea debe tener el mismo tipo de dato que la llave primaria a la que hace referencia, y debe tener el mismo nombre que la llave primaria a la que hace referencia
+     ** cuando una tabla tiene una clave foránea, se dice que la tabla depende de la tabla a la que hace referencia la clave foránea
+     */
+
+    /**
+     ** Características de las claves foráneas:
+     ** Relación entre tablas, las claves foráneas establecen una relación entre dos tablas
+     ** Integridad referencial, las claves foráneas garantizan la integridad referencial entre dos tablas
+     ** Restricciones de integridad: las claves foráneas permiten definir restricciones de integridad referencial entre dos tablas
+     ** Consultas y operaciones: las claves foráneas permiten realizar consultas y operaciones entre dos tablas
+     ** Mantenimiento de la consistencia: las claves foráneas permiten mantener la consistencia entre dos tablas
+     */
+
+    /**
+     *TODO Normalización de bases de datos
+     */
+
+    /**
+     ** La normalización de bases de datos es el proceso mediante el cual se optimiza la estructura de una base de datos relacional. La normalización de bases de datos se basa en el modelo relacional, que fue propuesto por Edgar Frank Codd en 1970, y en el lenguaje de consulta estructurado (SQL)
+     */
+
+    /**
+     ** Tres formas más comunes de normalización:
+     ** Primera forma normal (1FN): elimine los grupos repetidos de datos en una tabla. Cree una tabla independiente para cada grupo de datos relacionados e identifíquelos mediante una clave primaria
+     ** Segunda forma normal (2FN): cree tablas independientes para conjuntos de valores que se relacionan con un subconjunto de una clave primaria, relacione estas tablas con una clave foránea
+     ** Tercera forma normal (3FN): elimine los campos que no dependen de la clave primaria
+     */
 ?>
