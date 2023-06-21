@@ -961,10 +961,10 @@
     }
     sumar(10, []);
 
-    function sumar(int $numero1 = 0, array $numero2) {
+    function sumar2(int $numero1 = 0, array $numero2) {
         echo $numero1 + $numero2;
     }
-    sumar(10, []);
+    sumar2(10, []);
 
     /**
      *TODO Funciones que retornan valor
@@ -1232,4 +1232,263 @@
     $automovil = new Automovil(4, 5, 'manual');
     echo $automovil->getInfo();
     echo $automovil->getTransmision();
+
+    /**
+     *TODO Clases abstractas
+     */
+
+    /**
+     ** Las clases abstractas son aquellas que no pueden ser instanciadas, y que pueden contener métodos abstractos. Para definir una clase abstracta se utiliza la palabra reservada abstract
+     ** Sirve como plantilla para definir clases hijas
+     ** Una clase hija puede heredar de una sola clase padre abstracta
+     ** Una clase hija debe proporcionar una implementación de los métodos abstractos de la clase padre, la implementacion debe tener la misma firma que el método abstracto
+     */
+
+    abstract class Animal {
+        abstract public function hacerSonido();
+    }
+
+    class Perro extends Animal {
+        public function __construct() {
+        }
+        public function hacerSonido() {
+            echo 'Guau';
+        }
+    }
+
+    class Gato extends Animal {
+        public function __construct() {
+        }
+        public function hacerSonido() {
+            echo 'Miau';
+        }
+    }
+
+    $perro = new Perro();
+    $perro->hacerSonido();
+
+    echo "<br>";
+
+    $gato = new Gato();
+    $gato->hacerSonido();
+
+    /**
+     *TODO Interfaces
+     */
+
+    /**
+     ** Las interfaces son un tipo especial de clase abstracta que define un conjunto de métodos que deben ser implementados por una clase hija. Para definir una interfaz se utiliza la palabra reservada interface. No especifican la implementación de los métodos, solo su firma.
+     ** Una clase puede implementar varias interfaces, pero no puede heredar de varias clases, ya que PHP no soporta la herencia múltiple, pero si soporta la implementación múltiple de interfaces. Para implementar una interfaz se utiliza la palabra reservada implements.
+     */
+
+    interface Figura {
+        public function calcularArea();
+    }
+
+    class Circulo implements Figura {
+        public function __construct(private int $radio) {
+        }
+
+        public function calcularArea() {
+            return 3.14 * $this->radio * $this->radio;
+        }
+    }
+
+    $circulo = new Circulo(10);
+    echo $circulo->calcularArea();
+
+    echo "<br>";
+
+    /*
+    interface TransporteInterfaz {
+        public function getInfo() : string;
+        public function getRuedas(): int;
+    }
+
+    class Transporte implements TransporteInterfaz {
+        public function __construct(protected int $ruedas, protected int $capacidad) {
+           
+        }
+
+        public function getInfo() {
+            return "El transporte tiene " . $this->ruedas . " ruedas y una capacidad de " . $this->capacidad . " personas";
+        }
+
+        public function getRuedas() {
+            return $this->ruedas;
+        }
+    }
+    */
+
+    /**
+     *TODO Traits
+     */
+
+    /**
+     ** Los traits son una forma de reutilizar código en clases. Los traits son similares a las clases, pero no pueden ser instanciados. Para definir un trait se utiliza la palabra reservada trait. Para utilizar un trait en una clase se utiliza la palabra reservada use
+     */
+
+    trait Saludar {
+        public function saludar() {
+            echo 'Hola';
+        }
+
+        public function despedir() {
+            echo 'Adios';
+        }
+
+        public function decirNombre() {
+            echo 'Mi nombre es ' . $this->nombre;
+        }
+    }
+
+    class Persona {
+        use Saludar;
+
+        public function __construct(private string $nombre) {
+        }
+    }
+
+    $persona = new Persona('Juan');
+    $persona->saludar();
+    $persona->despedir();
+    $persona->decirNombre();
+
+    /**
+     *TODO Polimorfismo
+     */
+
+    /**
+     ** El polimorfismo es la capacidad de un objeto de una clase derivada de comportarse como un objeto de otra clase. Se puede lograr mediante la herencia y la sobrecarga de métodos. La sobrecarga de métodos es cuando una clase hija redefine un método de la clase padre
+     ** La sobrecarga de métodos es cuando una clase hija redefine un método de la clase padre
+     ** El polimorfismo se logra mediante la herencia y la sobrecarga de métodos
+     ** El polimorfismo se utiliza para crear código más mantenible y reutilizable
+     */
+
+    interface TransporteInterfaz {
+        public function getInfo() : string;
+        public function getRuedas(): int;
+    }
+
+    class Transporte implements TransporteInterfaz {
+        public function __construct(protected int $ruedas, protected int $capacidad) {
+           
+        }
+
+        public function getInfo() {
+            return "El transporte tiene " . $this->ruedas . " ruedas y una capacidad de " . $this->capacidad . " personas";
+        }
+
+        public function getRuedas() {
+            return $this->ruedas;
+        }
+    }
+
+    class Automovil extends Transporte implements TransporteInterfaz {
+        public function __construct(protected int $ruedas, protected int $capacidad, protected string $color) {
+            parent::__construct($ruedas, $capacidad);
+        }
+
+        public function getInfo() {
+            return "El automovil tiene " . $this->ruedas . " ruedas y una capacidad de " . $this->capacidad . " personas y es de color " . $this->color;
+        }
+
+        public function getColor() {
+            return $this->color;
+        }
+    }
+
+    $automovil = new Automovil(4, 5, 'rojo');
+    echo $automovil->getInfo();
+    echo $automovil->getRuedas();
+    echo $automovil->getColor();
+
+    /**
+     *TODO Autoload
+     */
+
+    /**
+     ** El autoload es una función que se ejecuta cuando se intenta utilizar una clase que no ha sido definida. El autoload nos permite cargar las clases de forma dinámica, sin necesidad de utilizar la función include o require, no es necesario incluir los archivos de las clases manualmente
+     ** el autoloading se basa en la funcion spl_autoload_register, que permite registrar una o más funciones que se ejecutan cuando se intenta utilizar una clase que no ha sido definida
+     */
+
+    /*
+    function my_autoload($clase){
+        //requiere __DIR__. '/' . $clase . '.php';
+    }
+
+    spl_autoload_register('my_autoload');
+    */
+
+    $detalles = new Detalles();
+    $clientes = new Clientes();
+
+    /**
+     * TODO Namespaces
+     */
+
+    /**
+     ** Los namespaces nos permiten agrupar clases y evitar conflictos de nombres. Para definir un namespace se utiliza la palabra reservada namespace, seguida del nombre del namespace. Para utilizar una clase de un namespace se utiliza el operador de resolución de ámbito (::)
+     */
+
+    //namespace App;
+
+    class Cliente {
+        public function __construct() {
+            echo 'Desde la clase cliente';
+        }
+    }
+
+    class Detalles {
+        public function __construct() {
+            echo 'Desde la clase detalles';
+        }
+    }
+
+    //use App\Cliente;
+
+    function my_autoload($clase){
+        $fileClass = explode('\\', $clase);
+        //requiere __DIR__. '/' . $fileClass[1] . '.php';
+    }
+
+    spl_autoload_register('my_autoload');
+
+    $cliente = new Cliente();
+    $detalles = new Detalles();
+
+    /**
+     *TODO Composer
+     */
+
+    /**
+     ** Composer es un administrador de paquetes para PHP, que nos permite instalar y actualizar librerías de terceros. Composer nos permite instalar librerías de terceros de forma sencilla, y nos permite mantenerlas actualizadas. Composer nos permite definir las dependencias de nuestro proyecto en un archivo llamado composer.json, y nos permite instalar las dependencias de nuestro proyecto con el comando composer install
+     */
+
+    /**
+     ** Autoload: composer nos permite definir el autoload de nuestro proyecto en el archivo composer.json, y nos permite generar el autoload con el comando composer dump-autoload
+     */
+
+    /*
+    {
+        "autoload": {
+            "psr-4": {
+                "App\\": "app/"
+            }
+        }
+    }
+
+    require __DIR__ . '/vendor/autoload.php';
+    use App\Cliente;
+    use App\Detalles;
+
+
+    $cliente = new Cliente();
+    $detalles = new Detalles();
+    */
+
+    /**
+     *! PHP avanzado
+     */
+
 ?>
