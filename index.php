@@ -956,6 +956,7 @@
 
     //declare(strict_types=1);
 
+    /*
     function sumar(int $numero1 = 0, array $numero2): void {
         echo $numero1 + $numero2;
     }
@@ -965,6 +966,7 @@
         echo $numero1 + $numero2;
     }
     sumar2(10, []);
+    */
 
     /**
      *TODO Funciones que retornan valor
@@ -1134,7 +1136,7 @@
      ** No puede acceder a propiedades de instancia
      */
 
-    class Persona {
+    class Persona2 {
         private string $nombre;
         protected int $edad;
         private static $nombreAux;
@@ -1166,7 +1168,7 @@
         }
     }
 
-    echo Persona::saludar();
+    echo Persona2::saludar();
 
     /**
      *TODO Herencia
@@ -1342,14 +1344,14 @@
         }
     }
 
-    class Persona {
+    class Persona3 {
         use Saludar;
 
         public function __construct(private string $nombre) {
         }
     }
 
-    $persona = new Persona('Juan');
+    $persona = new Persona3('Juan');
     $persona->saludar();
     $persona->despedir();
     $persona->decirNombre();
@@ -1365,6 +1367,7 @@
      ** El polimorfismo se utiliza para crear código más mantenible y reutilizable
      */
 
+    /*
     interface TransporteInterfaz {
         public function getInfo() : string;
         public function getRuedas(): int;
@@ -1402,6 +1405,7 @@
     echo $automovil->getInfo();
     echo $automovil->getRuedas();
     echo $automovil->getColor();
+    */
 
     /**
      *TODO Autoload
@@ -1420,8 +1424,8 @@
     spl_autoload_register('my_autoload');
     */
 
-    $detalles = new Detalles();
-    $clientes = new Clientes();
+    //$detalles = new Detalles();
+    //$clientes = new Clientes();
 
     /**
      * TODO Namespaces
@@ -1601,5 +1605,296 @@
      ** Primera forma normal (1FN): elimine los grupos repetidos de datos en una tabla. Cree una tabla independiente para cada grupo de datos relacionados e identifíquelos mediante una clave primaria
      ** Segunda forma normal (2FN): cree tablas independientes para conjuntos de valores que se relacionan con un subconjunto de una clave primaria, relacione estas tablas con una clave foránea
      ** Tercera forma normal (3FN): elimine los campos que no dependen de la clave primaria
+     */
+
+    /**
+     *TODO MySQL
+     */
+
+    /**
+     ** MySQL es un sistema de gestión de bases de datos relacionales (RDBMS) que permite almacenar y gestionar datos en una base de datos relacional. MySQL es un software de código abierto, y es el sistema de gestión de bases de datos relacionales más utilizado en el mundo
+     ** Ha sido integrada con otras herramientas de software libre, como PHP y Apache, para crear un sistema de desarrollo de aplicaciones web conocido como LAMP (Linux, Apache, MySQL y PHP)
+     */
+
+    /**
+     *TODO Caracteristicas de MySQL
+     */
+
+    /**
+     ** Velocidad: MySQL es muy rápido en la lectura de datos, debido a que utiliza un motor de almacenamiento basado en tablas hash
+     ** Seguridad: MySQL permite cifrar los datos que se almacenan en la base de datos, y permite utilizar conexiones seguras mediante SSL
+     ** Portabilidad: MySQL es un sistema multiplataforma, y puede ejecutarse en diferentes sistemas operativos, como Windows, Linux, Mac OS, etc
+     ** Facilidad de uso: MySQL es muy fácil de utilizar, y permite realizar tareas de administración de bases de datos de forma sencilla
+     ** Conectividad: MySQL permite conectarse a la base de datos mediante diferentes lenguajes de programación, como PHP, Java, Python, etc
+     ** Soporta el lengueje SQL: MySQL soporta el lenguaje SQL, que es un lenguaje de consulta estructurado que permite crear, modificar y eliminar bases de datos, tablas, registros, etc
+     ** Robusteza: MySQL es un sistema de gestión de bases de datos muy robusto, y permite gestionar grandes cantidades de datos
+     */
+
+    /**
+     *TODO Consola de MySQL
+     */
+
+    /**
+     ** Para acceder a la consola de MySQL, se debe ejecutar las siguientes instrucciones:
+     */
+
+    echo <<<HTML
+
+        <img src="images/1.png" alt="1">
+        <br>
+        <img src="images/2.png" alt="2">
+        <br>
+        <img src="images/3.png" alt="3">
+        <br>
+        <img src="images/4.png" alt="4">
+
+    HTML;
+
+    /**
+     *TODO Tipos de datos en MySQL
+     */
+
+    /**
+     ** Tipos de datos enteros:
+     ** TINYINT: es un entero de 1 byte, que puede almacenar valores entre -128 y 127
+     ** SMALLINT: es un entero de 2 bytes, que puede almacenar valores entre -32768 y 32767
+     ** MEDIUMINT: es un entero de 3 bytes, que puede almacenar valores entre -8388608 y 8388607
+     ** INT: es un entero de 4 bytes, que puede almacenar valores entre -2147483648 y 2147483647
+     ** BIGINT: es un entero de 8 bytes, que puede almacenar valores entre -9223372036854775808 y 9223372036854775807
+     ** BIT: es un entero de 1 bit, que puede almacenar valores entre 0 y 1
+     */
+
+    /**
+     ** Tipos de datos de coma flotante:
+     ** FLOAT: es un número de coma flotante de 4 bytes, que puede almacenar valores entre -3.402823466E+38 y -1.175494351E-38, 0 y 1.175494351E-38, 3.402823466E+38
+     ** DOUBLE: es un número de coma flotante de 8 bytes, que puede almacenar valores entre -1.7976931348623157E+308 y -2.2250738585072014E-308, 0 y 2.2250738585072014E-308, 1.7976931348623157E+308
+     ** DECIMAL: es un número de coma flotante de 8 bytes, que puede almacenar valores entre -9999999999999999999999999999.99999999 y 9999999999999999999999999999.99999999
+     */
+
+    /**
+     ** Tipos de datos de cadena:
+     ** CHAR: es una cadena de longitud fija, que puede almacenar hasta 255 caracteres, para mantener la longitud fija, los espacios en blanco al final de la cadena se rellenan
+     ** VARCHAR: es una cadena de longitud variable, que puede almacenar hasta 65535 caracteres, los espacios en blanco al final de la cadena se eliminan
+     ** TINYTEXT: es una cadena de longitud variable, que puede almacenar hasta 255 caracteres
+     ** TEXT: es una cadena de longitud variable, que puede almacenar hasta 65535 caracteres, distingue entre mayúsculas y minúsculas
+     ** MEDIUMTEXT: es una cadena de longitud variable, que puede almacenar hasta 16777215 caracteres
+     ** LONGTEXT: es una cadena de longitud variable, que puede almacenar hasta 4294967295 caracteres
+     ** BLOB: es una cadena de longitud variable, que puede almacenar hasta 65535 bytes, y que se utiliza para almacenar datos binarios como imágenes, archivos de audio, etc
+     */
+
+    /**
+     ** Tipos de datos de fecha y hora:
+     ** DATE: es una fecha en formato AAAA-MM-DD, que puede almacenar valores entre 1000-01-01 y 9999-12-31
+     ** DATETIME: es una fecha y hora en formato AAAA-MM-DD HH:MM:SS, que puede almacenar valores entre 1000-01-01 00:00:00 y 9999-12-31 23:59:59
+     ** TIMESTAMP: es una fecha y hora en formato AAAA-MM-DD HH:MM:SS, que puede almacenar valores entre 1970-01-01 00:00:01 y 2038-01-19 03:14:07
+     ** TIME: es una hora en formato HH:MM:SS, que puede almacenar valores entre -838:59:59 y 838:59:59
+     */
+
+    /**
+     ** Modificadores o constrains:
+     ** NOT NULL: indica que el campo no puede contener valores nulos
+     ** DEFAULT: indica el valor por defecto del campo
+     ** AUTO_INCREMENT: indica que el campo es autoincremental
+     ** PRIMARY KEY: indica que el campo es la clave primaria de la tabla
+     ** UNIQUE: indica que el campo no puede contener valores duplicados
+     */
+
+    /**
+     *TODO SQL (Structured Query Language)
+     */
+
+    /**
+     ** SQL es un lenguaje de consulta estructurado que permite crear, modificar y eliminar bases de datos, tablas, registros, etc.
+     */
+
+    /**
+     ** SQL se divide en cuatro comandos principales:
+     ** DDL (Data Definition Language): se utiliza para crear, modificar y eliminar bases de datos, tablas, etc
+     ** DML (Data Manipulation Language): se utiliza para insertar, modificar y eliminar registros
+     ** DQL (Data Query Language): se utiliza para realizar consultas a la base de datos
+     ** DCL (Data Control Language): se utiliza para controlar los permisos de acceso a la base de datos
+     */
+
+    /**
+     *TODO Que se puede hacer con SQL
+     */
+
+    /**
+     ** Crear y administrar bases de datos: una base de datos es un conjunto de tablas que se relacionan entre sí
+     ** Insertar, modificar y eliminar registros: un registro es un conjunto de datos que se almacenan en una tabla
+     ** Realizar consultas a la base de datos: una consulta es una instrucción que se utiliza para recuperar datos de una o más tablas
+     ** Filtrar, ordenar y agrupar registros: filtrar registros es una operación que se utiliza para seleccionar los registros que cumplen una determinada condición
+     ** Agregar funciones y calculos: una función es una operación que se utiliza para realizar un cálculo sobre un conjunto de registros
+     ** Crear vistas: una vista es una tabla virtual que se crea a partir de una consulta
+     ** Estables restricciones de integridad: las restricciones de integridad se utilizan para garantizar la integridad de los datos
+     */
+
+    /**
+     *TODO Comandos DDL (Data Definition Language)
+     */
+
+    /**
+     ** Los comandos DDL se utilizan para crear, modificar y eliminar bases de datos, tablas, etc.
+     */
+
+    /**
+     ** SHOW DATABASES: muestra las bases de datos que existen en el servidor. Sintaxis: SHOW DATABASES
+     ** CREATE DATABASE: crea una base de datos. Sintaxis: CREATE DATABASE nombre_base_datos
+     ** DROP DATABASE: elimina una base de datos. Sintaxis: DROP DATABASE nombre_base_datos
+     ** USE: selecciona una base de datos. Sintaxis: USE nombre_base_datos
+     ** CREATE TABLE: crea una tabla. Sintaxis: CREATE TABLE nombre_tabla (nombre_campo tipo_dato, nombre_campo tipo_dato, ...)
+     ** SHOW TABLES: muestra las tablas que existen en la base de datos. Sintaxis: SHOW TABLES
+     ** DESCRIBE: muestra la estructura de una tabla. Sintaxis: DESCRIBE nombre_tabla
+     ** ALTER TABLE: modifica la estructura de una tabla. Sintaxis: ALTER TABLE nombre_tabla accion. Acciones: ADD nombre_campo tipo_dato, DROP nombre_campo, MODIFY nombre_campo tipo_dato, RENAME TO nuevo_nombre_tabla
+     ** DROP TABLE: elimina una tabla. Sintaxis: DROP TABLE nombre_tabla
+     */
+
+    /**
+     *TODO Constraints
+     */
+
+    /**
+     ** Los constraints se utilizan para establecer reglas que permiten garantizar la integridad de los datos
+     */
+
+    /**
+     ** PRIMARY KEY: indica que el campo es la clave primaria de la tabla. Solo puede haber una clave primaria por tabla y no puede contener valores nulos
+     ** UNIQUE: indica que el campo no puede contener valores duplicados
+     ** NOT NULL: indica que el campo no puede contener valores nulos
+     ** FOREIGN KEY: indica que el campo es una clave foránea que hace referencia a la clave primaria de otra tabla
+     ** CHECK: indica que el campo debe cumplir una determinada condición
+     */
+
+    /**
+     *TODO Primary key
+     */
+
+    /**
+     ** Sintaxis: nombre_campo tipo_dato PRIMARY KEY
+     */
+
+    /**
+     *TODO MyPHPAdmin
+     */
+
+    echo <<<HTML
+
+        <h1>MyPHPAdmin</h1>
+
+        <p>MyPHPAdmin es una herramienta que permite administrar bases de datos MySQL</p>
+
+        <p>Para acceder a MyPHPAdmin, se debe ingresar a la siguiente URL: <a href="http://localhost/phpmyadmin">http://localhost/phpmyadmin</a></p>
+
+        <br>
+
+        <p>Para ingresar a MyPHPAdmin, se debe utilizar el usuario root y la contraseña que se estableció durante la instalación de MySQL</p>
+
+        <br>
+
+        <p>MyPHPAdmin permite crear, modificar y eliminar bases de datos, tablas, registros, etc.</p>
+
+        <br>
+
+        <img src="images/5.png" alt="5">
+        <br>
+        <img src="images/6.png" alt="6">
+        <br>
+        <img src="images/7.png" alt="7">
+        <br>
+        <img src="images/8.png" alt="8">
+
+    HTML;
+
+    /**
+     *TODO Comandos DML (Data Manipulation Language)
+     */
+
+    /**
+     ** Los comandos DML se utilizan para insertar, modificar y eliminar registros
+     */
+
+    /**
+     ** INSERT INTO: inserta un registro en una tabla. Sintaxis: INSERT INTO nombre_tabla (nombre_campo, nombre_campo, ...) VALUES (valor_campo, valor_campo, ...)
+     ** UPDATE: modifica uno o más registros de una tabla. Sintaxis: UPDATE nombre_tabla SET nombre_campo = valor_campo, nombre_campo = valor_campo, ... WHERE condicion
+     ** DELETE FROM: elimina uno o más registros de una tabla. Sintaxis: DELETE FROM nombre_tabla WHERE condicion
+     */
+
+    /**
+     *TODO Comandos DQL (Data Query Language)
+     */
+
+    /**
+     ** Los comandos DQL se utilizan para realizar consultas a la base de datos
+     */
+
+    /**
+     ** SELECT: realiza una consulta a la base de datos. Sintaxis: SELECT nombre_campo, nombre_campo, ... FROM nombre_tabla WHERE condicion
+     ** DISTINCT: indica que se deben mostrar solo los valores distintos. Sintaxis: SELECT DISTINCT nombre_campo, nombre_campo, ... FROM nombre_tabla WHERE condicion
+     ** FROM: indica la tabla de la cual se deben recuperar los datos. Sintaxis: SELECT nombre_campo, nombre_campo, ... FROM nombre_tabla WHERE condicion
+     ** WHERE: indica la condición que deben cumplir los registros que se van a recuperar. Sintaxis: SELECT nombre_campo, nombre_campo, ... FROM nombre_tabla WHERE condicion
+     ** ORDER BY: indica el orden en el que se deben mostrar los registros. Sintaxis: SELECT nombre_campo, nombre_campo, ... FROM nombre_tabla WHERE condicion ORDER BY nombre_campo [ASC|DESC]
+     ** GROUP BY: agrupa los registros que tienen el mismo valor en un campo. Sintaxis: SELECT nombre_campo, nombre_campo, ... FROM nombre_tabla WHERE condicion GROUP BY nombre_campo
+     ** HAVING: indica la condición que deben cumplir los grupos que se van a recuperar. Sintaxis: SELECT nombre_campo, nombre_campo, ... FROM nombre_tabla WHERE condicion GROUP BY nombre_campo HAVING condicion
+     */
+
+    /**
+     *TODO Operadores lógicos
+     */
+
+    /**
+     ** Los operadores lógicos se utilizan para combinar dos o más condiciones, se usan para filtrar los resultados de una consulta
+     */
+
+    /**
+     ** AND: indica que se deben cumplir dos o más condiciones. Sintaxis: condicion1 AND condicion2
+     ** OR: indica que se debe cumplir una condición u otra. Sintaxis: condicion1 OR condicion2
+     ** NOT: indica que se debe cumplir la condición contraria. Sintaxis: NOT condicion
+     */
+
+    /**
+     *TODO Operador LIKE
+     */
+
+    /**
+     ** El operador LIKE se utiliza para buscar registros que contengan un determinado patrón. Sintaxis: campo LIKE 'patron'
+     ** El patrón puede contener los siguientes caracteres especiales:
+     ** %: representa cero, uno o varios caracteres
+     ** _: representa un solo caracter
+     */
+
+    /**
+     *TODO Between
+     */
+
+    /**
+     ** El operador BETWEEN se utiliza para buscar registros que se encuentren dentro de un rango. Sintaxis: campo BETWEEN valor1 AND valor2
+     */
+
+    /**
+     *TODO Introducción a PDO
+     */
+
+    /**
+     ** PDO (PHP Data Objects) es una extensión de PHP que permite acceder a bases de datos, utilizando una interfaz orientada a objetos. Soporta los siguientes gestores de bases de datos: MySQL, PostgreSQL, SQLite, Oracle, etc.
+     ** Unas de las principales ventajas de PDO es su capacidad para trabajar con parametros vinculados y consultas preparadas, lo cual permite evitar ataques de inyección SQL
+     */
+
+    /**
+     ** Sintaxis para conectarse a una base de datos:
+     ** $conexion = new PDO('mysql:host=nombre_servidor;dbname=nombre_base_datos', 'nombre_usuario', 'contraseña');
+     */
+
+    /**
+     *TODO Excepciones y opciones de PDO
+     */
+
+    /**
+     ** Las excepciones son errores que se producen durante la ejecución de un programa. En PHP, las excepciones se manejan utilizando bloques try/catch
+     */
+
+    /**
+     ** PDO::ERRMODE_SILENT: es el modo por defecto, no lanza excepciones
+     ** PDO::ERRMODE_WARNING: lanza una advertencia
+     ** PDO::ERRMODE_EXCEPTION: lanza una excepción
      */
 ?>
