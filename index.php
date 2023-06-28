@@ -1897,4 +1897,214 @@
      ** PDO::ERRMODE_WARNING: lanza una advertencia
      ** PDO::ERRMODE_EXCEPTION: lanza una excepción
      */
+
+    /**
+     *TODO Conexión a la base de datos
+     */
+
+    echo <<<HTML
+
+        <img src="images/9.png" alt="9">
+        <br>
+        <img src="images/10.png" alt="10">
+
+    HTML;
+
+    /**
+     *TODO Registro de datos
+     */
+
+    /**
+     ** La clase PDOstatement contiene los métodos necesarios para ejecutar consultas SQL
+     ** Una instancia de la clase PDOstatement se obtiene mediante el método prepare() de la clase PDO
+     */
+
+    /**
+     ** Sintaxis para registrar datos:
+     ** $sql = "INSERT INTO nombre_tabla (nombre_campo, nombre_campo, ...) VALUES (:nombre_campo, :nombre_campo, ...)";
+     ** $sentencia = $conexion->prepare($sql);
+     ** $sentencia->bindParam(':nombre_campo', $variable);
+     ** $sentencia->execute();
+     */
+
+    /**
+     *TODO API REST
+     */
+
+    /**
+     ** API (Application Programming Interface) es un conjunto de funciones que permiten la comunicación entre aplicaciones. Un API proporciona una forma estandarizada y estructurada de comunicarse entre aplicaciones. Existen diferentes tipos de API: SOAP, REST, XML-RPC, etc.
+     ** REST (Representational State Transfer) es un estilo de arquitectura de software que define un conjunto de restricciones para crear servicios web
+     */
+
+    /**
+     *TODO Métodos API
+     */
+
+    /**
+     ** GET: se utiliza para obtener datos de un recurso
+     ** POST: se utiliza para crear un nuevo recurso
+     ** PUT: se utiliza para actualizar un recurso
+     ** DELETE: se utiliza para eliminar un recurso
+     */
+
+    /**
+     *TODO Códigos de estado en Response HTTP
+     */
+
+    /**
+     *TODO Respuestas informativas
+     */
+
+    /**
+     ** 100 Continue: indica que todo está bien y que el cliente puede continuar con la petición
+     ** 101 Switching Protocols: indica que el servidor va a cambiar el protocolo
+     ** 102 Processing: indica que el servidor ha recibido la petición y que la está procesando
+     ** 103 Early Hints: indica que el servidor está enviando información adicional antes de que se envíe la respuesta final
+     */
+
+    /**
+     *TODO Respuestas satisfactorias
+     */
+
+    /**
+     ** 200 OK: indica que la petición se ha realizado correctamente
+     ** 201 Created: indica que la petición se ha realizado correctamente y que se ha creado un nuevo recurso
+     ** 202 Accepted: indica que la petición se ha recibido pero que aún no se ha procesado
+     ** 203 Non-Authoritative Information: indica que la petición se ha realizado correctamente pero que el contenido de la respuesta puede provenir de un servidor diferente
+     ** 204 No Content: indica que la petición se ha realizado correctamente pero que no hay contenido para enviar
+     ** 205 Reset Content: indica que la petición se ha realizado correctamente pero que el cliente debe restablecer la vista que está mostrando
+     ** 206 Partial Content: indica que la petición se ha realizado correctamente pero que solo se ha enviado una parte del contenido
+     ** 207 Multi-Status: indica que la petición se ha realizado correctamente pero que hay más de un resultado
+     ** 208 Already Reported Multi-Status: indica que la petición se ha realizado correctamente pero que el resultado ya se ha enviado en una respuesta anterior
+     ** 226 IM Used: indica que la petición se ha realizado correctamente pero que el servidor está devolviendo una respuesta diferente a la que se esperaba
+     */
+
+    /**
+     *TODO Redirecciones
+     */
+
+    /**
+     ** 300 Multiple Choices: indica que la petición tiene más de una posible respuesta
+     ** 301 Moved Permanently: indica que el recurso solicitado se ha movido permanentemente a una nueva URL
+     ** 302 Found: indica que el recurso solicitado se ha movido temporalmente a una nueva URL
+     ** 303 See Other: indica que el recurso solicitado se ha movido temporalmente a una nueva URL y que se debe utilizar el método GET para obtenerlo
+     ** 304 Not Modified: indica que el recurso solicitado no se ha modificado desde la última vez que se solicitó
+     ** 305 Use Proxy: indica que el recurso solicitado solo está disponible a través de un proxy
+     ** 306 Switch Proxy: este código de estado ya no se utiliza
+     ** 307 Temporary Redirect: indica que el recurso solicitado se ha movido temporalmente a una nueva URL y que se debe utilizar el mismo método para obtenerlo
+     ** 308 Permanent Redirect: indica que el recurso solicitado se ha movido permanentemente a una nueva URL y que se debe utilizar el mismo método para obtenerlo
+     */
+
+    /**
+     *TODO Errores del cliente
+     */
+
+    /**
+     ** 400 Bad Request: indica que la petición no se ha podido procesar debido a un error del cliente
+     ** 401 Unauthorized: indica que la petición no se ha podido procesar porque el cliente no está autorizado
+     ** 402 Payment Required: este código de estado ya no se utiliza
+     ** 403 Forbidden: indica que la petición no se ha podido procesar porque el servidor se niega a responder
+     ** 404 Not Found: indica que el recurso solicitado no existe
+     ** 405 Method Not Allowed: indica que el método utilizado en la petición no está permitido
+     ** 406 Not Acceptable: indica que el servidor no puede devolver el contenido solicitado en el encabezado Accept de la petición
+     ** 407 Proxy Authentication Required: indica que el cliente debe autenticarse en el proxy antes de poder realizar la petición
+     ** 408 Request Timeout: indica que el servidor ha cerrado la conexión debido a que la petición ha tardado demasiado
+     ** 409 Conflict: indica que la petición no se ha podido procesar debido a un conflicto
+     ** 410 Gone: indica que el recurso solicitado ya no está disponible y que no se conoce una nueva URL
+     ** 411 Length Required: indica que la petición no se ha podido procesar porque falta el encabezado Content-Length
+     ** 412 Precondition Failed: indica que la petición no se ha podido procesar porque no se cumple una condición previa
+     ** 413 Payload Too Large: indica que la petición no se ha podido procesar porque el cuerpo es demasiado grande
+     ** 414 URI Too Long: indica que la petición no se ha podido procesar porque la URL es demasiado larga
+     ** 415 Unsupported Media Type: indica que la petición no se ha podido procesar porque el tipo de contenido no es compatible
+     ** 416 Range Not Satisfiable: indica que la petición no se ha podido procesar porque el rango solicitado no es válido
+     ** 417 Expectation Failed: indica que la petición no se ha podido procesar porque el servidor no puede cumplir con los requisitos del encabezado Expect de la petición
+     ** 418 I'm a teapot: indica que la petición no se ha podido procesar porque el servidor es una tetera
+     ** 421 Misdirected Request: indica que la petición no se ha podido procesar debido a que está dirigida a un servidor que no puede producir una respuesta
+     ** 422 Unprocessable Entity: indica que la petición no se ha podido procesar porque el cuerpo de la petición no se puede analizar
+     ** 423 Locked: indica que la petición no se ha podido procesar porque el recurso está bloqueado
+     ** 424 Failed Dependency: indica que la petición no se ha podido procesar porque falla una dependencia
+     ** 426 Upgrade Required: indica que la petición no se ha podido procesar porque el cliente debe actualizar a un protocolo superior
+     ** 428 Precondition Required: indica que la petición no se ha podido procesar porque el servidor requiere que se cumpla una condición previa
+     ** 429 Too Many Requests: indica que la petición no se ha podido procesar porque el cliente ha realizado demasiadas peticiones
+     ** 431 Request Header Fields Too Large: indica que la petición no se ha podido procesar porque el servidor no puede procesar los encabezados de la petición
+     ** 451 Unavailable For Legal Reasons: indica que la petición no se ha podido procesar debido a restricciones legales
+     */
+
+    /**
+     *TODO Errores del servidor
+     */
+
+    /**
+     ** 500 Internal Server Error: indica que la petición no se ha podido procesar debido a un error del servidor
+     ** 501 Not Implemented: indica que la petición no se ha podido procesar porque el servidor no admite el funcionamiento requerido
+     ** 502 Bad Gateway: indica que la petición no se ha podido procesar porque el servidor ha recibido una respuesta no válida
+     ** 503 Service Unavailable: indica que la petición no se ha podido procesar porque el servidor no está disponible
+     ** 504 Gateway Timeout: indica que la petición no se ha podido procesar porque el servidor no puede obtener una respuesta a tiempo
+     ** 505 HTTP Version Not Supported: indica que la petición no se ha podido procesar porque la versión HTTP no es compatible
+     ** 506 Variant Also Negotiates: indica que la petición no se ha podido procesar porque el servidor ha detectado una referencia circular al procesar la negociación de contenido
+     ** 507 Insufficient Storage: indica que la petición no se ha podido procesar porque no hay suficiente espacio de almacenamiento
+     ** 508 Loop Detected: indica que la petición no se ha podido procesar porque el servidor ha detectado un bucle infinito
+     ** 510 Not Extended: indica que la petición no se ha podido procesar porque no se ha extendido el protocolo
+     ** 511 Network Authentication Required: indica que la petición no se ha podido procesar porque el cliente debe autenticarse para poder realizar la petición
+     */
+
+    /**
+     *TODO Tipos de autenticación
+     */
+
+    /**
+     ** Autenticación basada en token (Token-based authentication): el cliente envía un token en cada petición y el servidor lo valida
+     ** Autenticación básic (Basic authentication): el cliente envía el nombre de usuario y la contraseña codificados en Base64 en el encabezado Authorization de la petición
+     ** Autenticación mediante API keys (API key authentication): el cliente envía una clave de API en el encabezado Authorization de la petición
+     ** Autenticación mediante OAuth (OAuth authentication): el cliente envía un token de acceso en el encabezado Authorization de la petición
+     */
+
+    /**
+     *TODO Implementando ApiRest (Slim)
+     */
+
+    /**
+     ** Slim Framework es un micro framework PHP que permite crear aplicaciones web y API RESTful de forma rápida y sencilla. Slim Framework es un micro framework PHP que permite crear aplicaciones web y API RESTful de forma rápida y sencilla.
+     */
+
+    /**
+     ** Características de Slim Framework:
+     ** Enrutamiento: Slim Framework permite definir rutas para responder a las peticiones HTTP.
+     ** Manejo de solicitudes y respuestas: Slim Framework permite manejar las solicitudes y respuestas HTTP.
+     ** Contenedores de dependencias: Slim Framework permite definir contenedores de dependencias para gestionar las dependencias de la aplicación.
+     ** Middleware: Slim Framework permite definir middleware para ejecutar código antes o después de que se ejecute la ruta.
+     ** Plantillas: Slim Framework permite definir plantillas para generar el contenido de las respuestas.
+     */
+
+    /**
+     ** Para crear un proyecto se siguen los siguientes pasos:
+     ** Cree una carpeta para el proyecto.
+     ** Haciendo uso de Composer cree un archivo composer.json con el siguiente contenido: { "require": { "slim/slim": "^3.0" } }
+     ** Configure el sistema PSR 6 y el server request handler haciendo uso de Composer: composer require slim/psr7
+     ** Cree un archivo index.php
+     */
+
+    /**
+     *TODO Creación de una aplicación usando PHP+MySQL+PDO
+     */
+
+    echo <<<HTML
+
+        <img src="images/11.png" alt="11">
+        <br>
+        <img src="images/12.png" alt="12">
+        <br>
+        <img src="images/13.png" alt="13">
+        <br>
+        <img src="images/14.png" alt="14">
+        <br>
+        <img src="images/15.png" alt="15">
+        <br>
+        <img src="images/16.png" alt="16">
+        <br>
+        <img src="images/17.png" alt="17">
+        <br>
+        <img src="images/18.png" alt="18">
+
+    HTML;
 ?>
